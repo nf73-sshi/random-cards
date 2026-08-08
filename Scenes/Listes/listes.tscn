@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b8rsedqou4rkl"]
+
+[ext_resource type="Script" uid="uid://dqyr8sx2yplel" path="res://Scenes/Listes/listes.gd" id="1_v87jk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v87jk"]
+font_size = 42
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Listes" type="Node2D" unique_id=995650220]
+script = ExtResource("1_v87jk")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=459869101]
+
+[node name="Bg" type="ColorRect" parent="UI" unique_id=1672035184]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.92523e-06, 0.48456806, 0.43063375, 1)
+
+[node name="AddList" type="Button" parent="UI" unique_id=170634458]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = -83.0
+offset_right = 268.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "AJOUTER LISTE"
+
+[node name="Back" type="Button" parent="UI" unique_id=472674366]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X
+"
+
+[node name="Label" type="Label" parent="UI" unique_id=1913782464]
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 636.0
+offset_bottom = 61.0
+text = "LISTE DE TOUTES LES LISTES"
+label_settings = SubResource("LabelSettings_v87jk")
+
+[connection signal="pressed" from="UI/AddList" to="." method="_on_add_list_pressed"]
+[connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]

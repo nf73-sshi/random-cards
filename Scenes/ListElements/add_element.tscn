@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://y7iinj8kkwmq"]
+
+[node name="AddElement" type="Node2D" unique_id=1063346602]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2028303224]
+layer = 2
+
+[node name="PopUp" type="Control" parent="UI" unique_id=1695712572]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="ColorRect" parent="UI/PopUp" unique_id=1724352634]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -400.0
+offset_right = 250.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.50626516, 0.4529888, 1)
+
+[node name="Text" type="Button" parent="UI/PopUp" unique_id=227227265]
+layout_mode = 1
+offset_left = -229.0
+offset_top = -379.0
+offset_right = 157.0
+offset_bottom = -316.0
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "AJOUTER ELEMENT"
+
+[node name="Back" type="Button" parent="UI/PopUp" unique_id=1588953654]
+layout_mode = 1
+offset_left = 195.0
+offset_top = -379.0
+offset_right = 269.0
+offset_bottom = -316.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "X
+"
+
+[node name="Validate" type="Button" parent="UI/PopUp" unique_id=1272734374]
+layout_mode = 1
+offset_left = 121.0
+offset_top = 352.0
+offset_right = 265.0
+offset_bottom = 415.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Valider
+"
+
+[node name="LineEdit" type="LineEdit" parent="UI/PopUp" unique_id=1337689570]
+layout_mode = 0
+offset_left = -161.0
+offset_top = -258.0
+offset_right = 199.0
+offset_bottom = -200.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Nom d'élément"
