@@ -11,6 +11,14 @@ class List:
 var listes : Dictionary[String, List]
 var current_list_name : String = ""
 
+func _print_content():
+	for list in listes.keys():
+		var elements = listes[list].elements
+		print("List : ", list)
+		print("Elements : ", elements.keys())
+
+	print("\n-----------------------------------------\n")	
+
 func ActionList(id :String, type: Action) -> bool:
 	match(type):
 		Action.ADD:
@@ -24,13 +32,7 @@ func ActionList(id :String, type: Action) -> bool:
 				
 			listes.erase(id)
 	
-	for list in listes.keys():
-		var elements = listes[list].elements
-		print("List : ", list)
-		print("Elements : ", elements.keys())
-
-	print("\n-----------------------------------------\n")
-	
+	_print_content()
 	return true
 	
 func ActionElement(text : String, list_id :String, type: Action) -> bool:
@@ -55,7 +57,8 @@ func ActionElement(text : String, list_id :String, type: Action) -> bool:
 				return false
 				
 			listes[list_id].elements.erase(text)
-		
+	
+	_print_content()	
 	return true
 		
 func _ready() -> void:

@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://y7iinj8kkwmq"]
 
+[ext_resource type="Script" uid="uid://bdbehqlw4s8kc" path="res://Scenes/ListElements/add_element.gd" id="1_f1b5j"]
+
 [node name="AddElement" type="Node2D" unique_id=1063346602]
+script = ExtResource("1_f1b5j")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2028303224]
 layer = 2
@@ -76,3 +79,6 @@ offset_right = 199.0
 offset_bottom = -200.0
 theme_override_font_sizes/font_size = 32
 placeholder_text = "Nom d'élément"
+
+[connection signal="pressed" from="UI/PopUp/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="UI/PopUp/Validate" to="." method="_on_validate_pressed"]

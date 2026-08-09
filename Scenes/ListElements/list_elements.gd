@@ -1,9 +1,63 @@
+class_name ListEltScene
 extends Node2D 
 
+var current_display : Array[Node]
 var add_elt = preload("res://Scenes/ListElements/add_element.tscn")
+
+func RefreshAndDoAction(text :String, list_name: String, type :Data.Action):
+	Data.ActionElement(text, list_name, type)
+	UpdateDisplay()
+	
+func UpdateDisplay():
+	for e in current_display:
+		e.queue_free()		
+	current_display.clear()
+	
+	var offsetX = 20
+	var offsetY = 100
+	
+	for elt_name in Data.listes[Data.current_list_name].elements.keys():
+		
+		#LABEL ADD
+		var label = Label.new()
+		$UI.add_child(label)
+		
+		label.label_settings = LabelSettings.new()
+		label.label_settings.font_size = 32
+		
+		label.text = elt_name
+		label.position = Vector2(offsetX, offsetY)
+		label.size = Vector2(200, 100)
+		offsetY += 40
+		
+		current_display.append(label)
+		var create_remove_button = func(offsetX, offsetY):
+			var remove = Button.new()
+			$UI.add_child(remove)
+		
+			remove.text = "X"
+			remove.size = Vector2(30, 20)
+			remove.position = Vector2(get_viewport_rect().size.x - 64.0, offsetY - 10.0)
+			current_display.append(remove)
+		
+			remove.pressed.connect(RefreshAndDoAction.bind(elt_name, Data.current_list_name, Data.Action.REMOVE))
+		var create_edit_button = func(offsetX, offsetY):
+			var edit = Button.new()
+			$UI.add_child(edit)
+			
+			edit.text = "Edit"
+			edit.size = Vector2(30, 20)
+			edit.position = Vector2(get_viewport_rect().size.x - 120.0, offsetY - 10.0)
+			current_display.append(edit)
+			
+			#edit.pressed.connect(ChangeToElementsScene.bind(list_name))
+	
+		create_remove_button.call(offsetX, offsetY)
+		create_edit_button.call(offsetX, offsetY)
 
 func _ready() -> void:
 	$UI/Label.text = "List : " + Data.current_list_name
+	UpdateDisplay()
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Listes/listes.tscn")
