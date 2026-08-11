@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bvjbj4g10lteo"]
 
 [ext_resource type="Script" uid="uid://dbo3wee1eay6y" path="res://Scenes/ListElements/list_elements.gd" id="1_1tl1k"]
+[ext_resource type="Script" uid="uid://n0kih06sm1mc" path="res://Utils/Scroller/scroller.gd" id="2_yfqdx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rxhxr"]
-font_size = 42
+font_size = 35
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
@@ -19,6 +20,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1.92523e-06, 0.48456806, 0.43063375, 1)
+
+[node name="Scroller" type="Node2D" parent="UI" unique_id=275908454]
+script = ExtResource("2_yfqdx")
 
 [node name="AddElt" type="Button" parent="UI" unique_id=647951378]
 anchors_preset = 7

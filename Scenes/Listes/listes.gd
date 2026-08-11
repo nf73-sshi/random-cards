@@ -5,6 +5,7 @@ var current_display : Array[Node]
 
 func ChangeToGameScene(list_name: String):
 	Data.current_list_name = list_name
+	get_tree().change_scene_to_file("res://Scenes/Game/game.tscn")
 
 func ChangeToElementsScene(list_name: String):
 	Data.current_list_name = list_name
@@ -26,7 +27,7 @@ func UpdateDisplay():
 		
 		#LABEL ADD
 		var label = Label.new()
-		$UI.add_child(label)
+		$UI/Scroller.add_child(label)
 		
 		label.label_settings = LabelSettings.new()
 		label.label_settings.font_size = 32
@@ -40,7 +41,7 @@ func UpdateDisplay():
 		
 		var create_remove_button = func(offsetX, offsetY):
 			var remove = Button.new()
-			$UI.add_child(remove)
+			$UI/Scroller.add_child(remove)
 		
 			remove.text = "X"
 			remove.size = Vector2(30, 20)
@@ -50,7 +51,7 @@ func UpdateDisplay():
 			remove.pressed.connect(RefreshAndDoAction.bind(list_name, Data.Action.REMOVE))
 		var create_edit_button = func(offsetX, offsetY):
 			var edit = Button.new()
-			$UI.add_child(edit)
+			$UI/Scroller.add_child(edit)
 			
 			edit.text = "Edit"
 			edit.size = Vector2(30, 20)
@@ -60,7 +61,7 @@ func UpdateDisplay():
 			edit.pressed.connect(ChangeToElementsScene.bind(list_name))
 		var create_use_button = func(offsetX, offsetY):
 			var use = Button.new()
-			$UI.add_child(use)
+			$UI/Scroller.add_child(use)
 			
 			use.text = "Utiliser"
 			use.size = Vector2(30, 20)
@@ -72,6 +73,7 @@ func UpdateDisplay():
 		create_remove_button.call(offsetX, offsetY)
 		create_edit_button.call(offsetX, offsetY)
 		create_use_button.call(offsetX, offsetY)
+		
 var addlist = preload("res://Scenes/Listes/addlist.tscn")
 
 func _ready() -> void:

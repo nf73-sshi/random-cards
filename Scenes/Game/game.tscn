@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bp3a2aevrr8lj"]
+
+[ext_resource type="Script" uid="uid://cyltxf85jptsh" path="res://Scenes/Game/game.gd" id="1_mv0hc"]
+[ext_resource type="Script" uid="uid://n0kih06sm1mc" path="res://Utils/Scroller/scroller.gd" id="2_qxfds"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qxfds"]
+font_size = 35
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Game" type="Node2D" unique_id=344604105]
+script = ExtResource("1_mv0hc")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=786932105]
+
+[node name="Bg" type="ColorRect" parent="UI" unique_id=1336715271]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1.92523e-06, 0.48456806, 0.43063375, 1)
+
+[node name="Scroller" type="Node2D" parent="UI" unique_id=1055796070]
+script = ExtResource("2_qxfds")
+
+[node name="Back" type="Button" parent="UI" unique_id=1966171692]
+self_modulate = Color(18.892157, 2.0103302, 2.0103302, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X
+"
+
+[node name="Reload" type="Button" parent="UI" unique_id=1127109230]
+self_modulate = Color(2.1899235, 5.251998, 18.892157, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_top = 68.0
+offset_bottom = 131.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "R
+"
+
+[node name="Label" type="Label" parent="UI" unique_id=1355955972]
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 641.0
+offset_bottom = 65.0
+text = "LIST :"
+label_settings = SubResource("LabelSettings_qxfds")
+
+[node name="LeaveTimer" type="Timer" parent="." unique_id=1059787397]
+wait_time = 0.5
+one_shot = true
+ignore_time_scale = true
+
+[node name="ReloadTimer" type="Timer" parent="." unique_id=1919432469]
+wait_time = 0.5
+one_shot = true
+ignore_time_scale = true
+
+[connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="UI/Reload" to="." method="_on_reload_pressed"]
+[connection signal="timeout" from="LeaveTimer" to="." method="_on_leave_timer_timeout"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

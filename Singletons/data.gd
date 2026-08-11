@@ -9,7 +9,7 @@ class List:
 	var elements : Dictionary[String, Element]
 
 var listes : Dictionary[String, List]
-var current_list_name : String = ""
+var current_list_name : String = "Brawlers"
 
 func _print_content():
 	for list in listes.keys():
@@ -62,7 +62,15 @@ func ActionElement(text : String, list_id :String, type: Action) -> bool:
 	return true
 		
 func _ready() -> void:
-	pass
+	ActionList("Brawlers", Action.ADD)
+	
+	var brawlers = []
+	
+	for i in range(50):
+		brawlers.append(str(i))
+	
+	for b in brawlers:
+		ActionElement(b, "Brawlers", Action.ADD)
 	
 func _process(delta: float) -> void:
 	pass

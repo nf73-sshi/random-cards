@@ -20,7 +20,7 @@ func UpdateDisplay():
 		
 		#LABEL ADD
 		var label = Label.new()
-		$UI.add_child(label)
+		$UI/Scroller.add_child(label)
 		
 		label.label_settings = LabelSettings.new()
 		label.label_settings.font_size = 32
@@ -33,7 +33,7 @@ func UpdateDisplay():
 		current_display.append(label)
 		var create_remove_button = func(offsetX, offsetY):
 			var remove = Button.new()
-			$UI.add_child(remove)
+			$UI/Scroller.add_child(remove)
 		
 			remove.text = "X"
 			remove.size = Vector2(30, 20)
@@ -43,7 +43,7 @@ func UpdateDisplay():
 			remove.pressed.connect(RefreshAndDoAction.bind(elt_name, Data.current_list_name, Data.Action.REMOVE))
 		var create_edit_button = func(offsetX, offsetY):
 			var edit = Button.new()
-			$UI.add_child(edit)
+			$UI/Scroller.add_child(edit)
 			
 			edit.text = "Edit"
 			edit.size = Vector2(30, 20)
@@ -56,7 +56,7 @@ func UpdateDisplay():
 		create_edit_button.call(offsetX, offsetY)
 
 func _ready() -> void:
-	$UI/Label.text = "List : " + Data.current_list_name
+	$UI/Label.text = "LIST: " + Data.current_list_name
 	UpdateDisplay()
 
 func _on_back_pressed() -> void:

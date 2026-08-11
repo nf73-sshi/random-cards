@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8rsedqou4rkl"]
 
 [ext_resource type="Script" uid="uid://dqyr8sx2yplel" path="res://Scenes/Listes/listes.gd" id="1_v87jk"]
+[ext_resource type="Script" uid="uid://n0kih06sm1mc" path="res://Utils/Scroller/scroller.gd" id="2_bpm7b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v87jk"]
 font_size = 42
@@ -19,6 +20,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1.92523e-06, 0.48456806, 0.43063375, 1)
+
+[node name="Scroller" type="Node2D" parent="UI" unique_id=263152033]
+script = ExtResource("2_bpm7b")
 
 [node name="AddList" type="Button" parent="UI" unique_id=170634458]
 anchors_preset = 7
@@ -51,7 +55,7 @@ offset_left = 13.0
 offset_top = 3.0
 offset_right = 636.0
 offset_bottom = 61.0
-text = "LISTE DE TOUTES LES LISTES"
+text = "LISTES"
 label_settings = SubResource("LabelSettings_v87jk")
 
 [connection signal="pressed" from="UI/AddList" to="." method="_on_add_list_pressed"]
