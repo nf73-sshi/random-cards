@@ -8,6 +8,17 @@ script = ExtResource("1_f1b5j")
 [node name="UI" type="CanvasLayer" parent="." unique_id=2028303224]
 layer = 2
 
+[node name="Bg" type="ColorRect" parent="UI" unique_id=492382177]
+modulate = Color(1, 1, 1, 0.48235294)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="PopUp" type="Control" parent="UI" unique_id=1695712572]
 layout_mode = 3
 anchors_preset = 8
@@ -76,9 +87,10 @@ layout_mode = 0
 offset_left = -161.0
 offset_top = -258.0
 offset_right = 199.0
-offset_bottom = -200.0
-theme_override_font_sizes/font_size = 32
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 30
 placeholder_text = "Nom d'élément"
+alignment = 1
 
 [connection signal="pressed" from="UI/PopUp/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="UI/PopUp/Validate" to="." method="_on_validate_pressed"]

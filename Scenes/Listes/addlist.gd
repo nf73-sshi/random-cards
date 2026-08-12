@@ -14,6 +14,7 @@ func _on_validate_pressed() -> void:
 	var parent = get_parent()
 	
 	if parent is ListScene:
+		Data.SaveAndLoad()
 		parent.UpdateDisplay()
 		
 	queue_free()

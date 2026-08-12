@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://ygh5hjrins43"]
+
+[ext_resource type="Script" uid="uid://bbkooj5cam15m" path="res://Scenes/Listes/edit_list.gd" id="1_alp3y"]
+[ext_resource type="Script" uid="uid://csr7p5884mgnh" path="res://Utils/Click2Button/click_2_button.gd" id="2_ssp16"]
+
+[node name="EditList" type="Node2D" unique_id=1457417658]
+script = ExtResource("1_alp3y")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1160890129]
+layer = 2
+
+[node name="Bg" type="ColorRect" parent="UI" unique_id=2093195407]
+modulate = Color(1, 1, 1, 0.48235294)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PopUp" type="Control" parent="UI" unique_id=1312880607]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="ColorRect" parent="UI/PopUp" unique_id=1255787582]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -400.0
+offset_right = 250.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.50626516, 0.4529888, 1)
+metadata/_edit_lock_ = true
+
+[node name="EditElement" type="Button" parent="UI/PopUp" unique_id=1821951726]
+layout_mode = 1
+offset_left = -229.0
+offset_top = -379.0
+offset_right = 157.0
+offset_bottom = -316.0
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "MODIFIER LISTE"
+
+[node name="Back" type="Button" parent="UI/PopUp" unique_id=1199338622]
+layout_mode = 1
+offset_left = 195.0
+offset_top = -379.0
+offset_right = 269.0
+offset_bottom = -316.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "X
+"
+script = ExtResource("2_ssp16")
+metadata/_custom_type_script = "uid://csr7p5884mgnh"
+
+[node name="Validate" type="Button" parent="UI/PopUp" unique_id=1230182756]
+layout_mode = 1
+offset_left = 121.0
+offset_top = 352.0
+offset_right = 265.0
+offset_bottom = 415.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Valider
+"
+script = ExtResource("2_ssp16")
+metadata/_custom_type_script = "uid://csr7p5884mgnh"
+
+[node name="LineEdit" type="LineEdit" parent="UI/PopUp" unique_id=607318430]
+layout_mode = 0
+offset_left = -164.0
+offset_top = -229.0
+offset_right = 196.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Nouveau nom"
+alignment = 1
+
+[connection signal="on_trigger" from="UI/PopUp/Back" to="." method="_on_back_on_trigger"]
+[connection signal="on_trigger" from="UI/PopUp/Validate" to="." method="_on_validate_on_trigger"]

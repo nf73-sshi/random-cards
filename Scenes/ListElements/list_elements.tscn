@@ -54,9 +54,10 @@ text = "X
 offset_left = 13.0
 offset_top = 3.0
 offset_right = 636.0
-offset_bottom = 61.0
+offset_bottom = 153.0
 text = "T"
 label_settings = SubResource("LabelSettings_rxhxr")
+clip_text = true
 
 [connection signal="pressed" from="UI/AddElt" to="." method="_on_add_elt_pressed"]
 [connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]
