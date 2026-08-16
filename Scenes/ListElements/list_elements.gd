@@ -81,7 +81,8 @@ func UpdateDisplay():
 		create_count_label.call(offsetX, offsetY)
 		
 		offsetY += 80
-		
+	$UI/Scroller.minPosY = -offsetY + 100.0
+	
 func _ready() -> void:
 	$UI/Label.text = "LIST: " + Data.current_list_name
 	UpdateDisplay()

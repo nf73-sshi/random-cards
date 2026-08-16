@@ -6,6 +6,9 @@ func _on_back_pressed() -> void:
 	queue_free()
 
 func _on_validate_pressed() -> void:
+	if input_name.text.length() <= 0:
+		return
+	
 	var result = Data.ActionList(input_name.text, Data.Action.ADD)
 	
 	if not result:

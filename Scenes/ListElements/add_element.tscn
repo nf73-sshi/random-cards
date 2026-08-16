@@ -82,15 +82,19 @@ theme_override_font_sizes/font_size = 40
 text = "Valider
 "
 
-[node name="LineEdit" type="LineEdit" parent="UI/PopUp" unique_id=1337689570]
+[node name="LineEdit" type="TextEdit" parent="UI/PopUp" unique_id=1561204269]
 layout_mode = 0
-offset_left = -161.0
+offset_left = -189.0
 offset_top = -258.0
-offset_right = 199.0
-offset_bottom = 2.0
-theme_override_font_sizes/font_size = 30
-placeholder_text = "Nom d'élément"
-alignment = 1
+offset_right = 229.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Nom de l'élément.
+
+(Appuyez sur
+Entrer pour créer en plusieurs en
+une seule fois)"
 
 [connection signal="pressed" from="UI/PopUp/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="UI/PopUp/Validate" to="." method="_on_validate_pressed"]
+[connection signal="gui_input" from="UI/PopUp/LineEdit" to="." method="_on_line_edit_gui_input"]

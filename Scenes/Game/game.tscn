@@ -23,7 +23,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1.92523e-06, 0.48456806, 0.43063375, 1)
 
-[node name="Scroller" type="Node2D" parent="UI" unique_id=1055796070]
+[node name="Scroller" type="Node2D" parent="UI" unique_id=46401116]
 script = ExtResource("2_qxfds")
 
 [node name="Back" type="Button" parent="UI" unique_id=603267034]

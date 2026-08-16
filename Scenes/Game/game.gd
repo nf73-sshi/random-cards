@@ -4,7 +4,7 @@ var current_display : Array[Node] = []
 
 const columns = 7	
 const size = Vector2(80, 80)
-const padding = Vector2(15, 15)
+const padding = Vector2(10, 10)
 
 var shuffled_elements : Array
 
@@ -18,7 +18,7 @@ func CreateCards():
 	current_display.clear()
 	shuffled_elements.clear()
 	
-	const start_offset = Vector2(80, 100)
+	const start_offset = Vector2(50, 175)
 	var offset = start_offset
 	var current_column = 0
 	

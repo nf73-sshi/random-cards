@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://5vaqj2b2ltr"]
 
 [ext_resource type="Script" uid="uid://cf8r1jqo7iauk" path="res://Scenes/ListElements/edit_element.gd" id="1_g51wl"]
-[ext_resource type="Script" uid="uid://csr7p5884mgnh" path="res://Utils/Click2Button/click_2_button.gd" id="2_one7e"]
 
 [node name="EditElement" type="Node2D" unique_id=826271018]
 script = ExtResource("1_g51wl")
@@ -62,7 +61,7 @@ theme_override_font_sizes/font_size = 40
 disabled = true
 text = "MODIFIER ELEMENT"
 
-[node name="Back" type="Button" parent="UI/PopUp" unique_id=539154381]
+[node name="Back" type="Button" parent="UI/PopUp" unique_id=1382657765]
 layout_mode = 1
 offset_left = 195.0
 offset_top = -379.0
@@ -72,10 +71,8 @@ theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "X
 "
-script = ExtResource("2_one7e")
-metadata/_custom_type_script = "uid://csr7p5884mgnh"
 
-[node name="Validate" type="Button" parent="UI/PopUp" unique_id=2043193842]
+[node name="Validate" type="Button" parent="UI/PopUp" unique_id=960830777]
 layout_mode = 1
 offset_left = 121.0
 offset_top = 352.0
@@ -85,8 +82,6 @@ theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Valider
 "
-script = ExtResource("2_one7e")
-metadata/_custom_type_script = "uid://csr7p5884mgnh"
 
 [node name="LineEdit" type="LineEdit" parent="UI/PopUp" unique_id=1226849219]
 layout_mode = 0
@@ -111,5 +106,5 @@ max_length = 2
 virtual_keyboard_enabled = false
 virtual_keyboard_type = 2
 
-[connection signal="on_trigger" from="UI/PopUp/Back" to="." method="_on_back_on_trigger"]
-[connection signal="on_trigger" from="UI/PopUp/Validate" to="." method="_on_validate_on_trigger"]
+[connection signal="pressed" from="UI/PopUp/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="UI/PopUp/Validate" to="." method="_on_validate_pressed"]

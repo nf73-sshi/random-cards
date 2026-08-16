@@ -100,7 +100,7 @@ func UpdateDisplay():
 		create_use_button.call(offsetX, offsetY)
 		
 		offsetY += 100
-		
+	$UI/Scroller.minPosY = -offsetY + 100.0
 var addlist = preload("res://Scenes/Listes/addlist.tscn")
 
 func _ready() -> void:
