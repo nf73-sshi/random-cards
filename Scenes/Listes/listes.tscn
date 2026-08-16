@@ -53,10 +53,24 @@ text = "X
 [node name="Label" type="Label" parent="UI" unique_id=1913782464]
 offset_left = 13.0
 offset_top = 3.0
-offset_right = 636.0
+offset_right = 405.0
 offset_bottom = 61.0
 text = "LISTES"
 label_settings = SubResource("LabelSettings_v87jk")
 
+[node name="Find" type="LineEdit" parent="UI" unique_id=886990296]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -307.0
+offset_right = -82.5
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Recherche"
+alignment = 1
+clear_button_enabled = true
+
 [connection signal="pressed" from="UI/AddList" to="." method="_on_add_list_pressed"]
 [connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]
+[connection signal="text_changed" from="UI/Find" to="." method="_on_find_text_changed"]

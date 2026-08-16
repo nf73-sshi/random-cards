@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bvjbj4g10lteo"]
+
+[ext_resource type="Script" uid="uid://dbo3wee1eay6y" path="res://Scenes/ListElements/list_elements.gd" id="1_1tl1k"]
+[ext_resource type="Script" uid="uid://n0kih06sm1mc" path="res://Utils/Scroller/scroller.gd" id="2_yfqdx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxhxr"]
+font_size = 35
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ListElements" type="Node2D" unique_id=1797927700]
+script = ExtResource("1_1tl1k")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1228453333]
+
+[node name="Bg" type="ColorRect" parent="UI" unique_id=255290571]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.92523e-06, 0.48456806, 0.43063375, 1)
+
+[node name="Scroller" type="Node2D" parent="UI" unique_id=1131065627]
+script = ExtResource("2_yfqdx")
+
+[node name="AddElt" type="Button" parent="UI" unique_id=647951378]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = -83.0
+offset_right = 268.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "AJOUTER ELEMENT"
+
+[node name="Back" type="Button" parent="UI" unique_id=1094507852]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X
+"
+
+[node name="Label" type="Label" parent="UI" unique_id=710556393]
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 404.0
+offset_bottom = 153.0
+text = "T"
+label_settings = SubResource("LabelSettings_rxhxr")
+clip_text = true
+
+[node name="Find" type="LineEdit" parent="UI" unique_id=1901507698]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -307.0
+offset_right = -82.5
+offset_bottom = 63.0
+grow_horizontal = 0
+placeholder_text = "Recherche"
+alignment = 1
+
+[connection signal="pressed" from="UI/AddElt" to="." method="_on_add_elt_pressed"]
+[connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]
+[connection signal="text_changed" from="UI/Find" to="." method="_on_line_edit_text_changed"]

@@ -27,6 +27,6 @@ func _on_validate_pressed() -> void:
 
 	Data.EditElement(current_element, new_name, count)
 	var parent = get_parent() as ListEltScene
-	parent.UpdateDisplay()
+	parent.UpdateDisplay(parent.find.text)
 	
 	queue_free()

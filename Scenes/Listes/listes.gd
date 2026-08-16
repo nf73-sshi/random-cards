@@ -25,7 +25,7 @@ func RefreshAndDoAction(list_name: String, type :Data.Action):
 	Data.ActionList(list_name, type)
 	UpdateDisplay()
 	
-func UpdateDisplay():
+func UpdateDisplay(text: String = ""):
 	for e in current_display:
 		e.queue_free()		
 	current_display.clear()
@@ -36,7 +36,9 @@ func UpdateDisplay():
 	const paddingX = 15.0
 	
 	for list_name in Data.listes.keys():
-		
+		if text != "" and not list_name.contains(text):
+			continue
+			
 		#LABEL ADD
 		var label = Label.new()
 		$UI/Scroller.add_child(label)
@@ -114,3 +116,7 @@ func _on_add_list_pressed() -> void:
 		return
 	
 	add_child(addlist.instantiate())
+
+func _on_find_text_changed(new_text: String) -> void:
+	UpdateDisplay(new_text)
+	$UI/Scroller.position.y = 0.0

@@ -18,7 +18,7 @@ func RefreshAndDoAction(text :String, list_name: String, type :Data.Action):
 	Data.ActionElement(text, list_name, type)
 	UpdateDisplay()
 	
-func UpdateDisplay():
+func UpdateDisplay(text :String = ""):
 	for e in current_display:
 		e.queue_free()		
 	current_display.clear()
@@ -29,7 +29,9 @@ func UpdateDisplay():
 	const paddingX = 10.0
 	
 	for elt_name in Data.listes[Data.current_list_name].elements.keys():
-		
+		if text != "" and not elt_name.contains(text):
+			continue
+			
 		#LABEL ADD
 		var label = Label.new()
 		$UI/Scroller.add_child(label)
@@ -84,8 +86,8 @@ func UpdateDisplay():
 	$UI/Scroller.minPosY = -offsetY + 100.0
 	
 func _ready() -> void:
-	$UI/Label.text = "LIST: " + Data.current_list_name
-	UpdateDisplay()
+	$UI/Label.text = Data.current_list_name
+	UpdateDisplay("")
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Listes/listes.tscn")
@@ -95,3 +97,7 @@ func _on_add_elt_pressed() -> void:
 		return
 	
 	add_child(add_elt.instantiate())
+
+func _on_line_edit_text_changed(new_text: String) -> void:
+	UpdateDisplay(new_text)
+	$UI/Scroller.position.y = 0.0
