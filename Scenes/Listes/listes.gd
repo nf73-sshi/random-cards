@@ -45,7 +45,8 @@ func UpdateDisplay(text: String = ""):
 		
 		label.label_settings = LabelSettings.new()
 		label.label_settings.font_size = 36
-		
+		label.label_settings.outline_size = 8
+		label.label_settings.outline_color = Color(0, 0, 0, 1)
 		label.size = Vector2(600, 58)
 		label.clip_text = true
 		
@@ -101,7 +102,7 @@ func UpdateDisplay(text: String = ""):
 		create_rename_button.call(offsetX, offsetY)
 		create_use_button.call(offsetX, offsetY)
 		
-		offsetY += 100
+		offsetY += 80
 	$UI/Scroller.minPosY = -offsetY + 100.0
 	$UI/Count.text = "NOMBRE : " + str(Data.listes.size())
 	

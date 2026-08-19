@@ -37,8 +37,10 @@ func UpdateDisplay(text :String = ""):
 		$UI/Scroller.add_child(label)
 		
 		label.label_settings = LabelSettings.new()
+		label.label_settings.outline_size = 8
+		label.label_settings.outline_color = Color(0, 0, 0, 1)
 		label.label_settings.font_size = 32
-		
+
 		label.size = Vector2(600, 58)
 		label.clip_text = true
 		
@@ -81,7 +83,7 @@ func UpdateDisplay(text :String = ""):
 		create_remove_button.call(offsetX, offsetY)
 		create_edit_button.call(offsetX, offsetY)
 		create_count_label.call(offsetX, offsetY)
-		offsetY += 80
+		offsetY += 65
 	$UI/Scroller.minPosY = -offsetY + 100.0
 	$UI/Count.text = "NOMBRE : " + str(Data.listes[Data.current_list_name].elements.size())
 	

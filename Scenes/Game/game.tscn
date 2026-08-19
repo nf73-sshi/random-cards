@@ -7,7 +7,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_qxfds"]
 font_size = 32
 outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+outline_color = Color(1, 0, 0, 1)
 
 [node name="Game" type="Node2D" unique_id=344604105]
 script = ExtResource("1_mv0hc")

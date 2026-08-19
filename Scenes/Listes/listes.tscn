@@ -6,12 +6,12 @@
 [sub_resource type="LabelSettings" id="LabelSettings_v87jk"]
 font_size = 42
 outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+outline_color = Color(1, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bpm7b"]
 font_size = 20
 outline_size = 7
-outline_color = Color(0, 0, 0, 1)
+outline_color = Color(1, 0, 0, 1)
 
 [node name="Listes" type="Node2D" unique_id=995650220]
 script = ExtResource("1_v87jk")

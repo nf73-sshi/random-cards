@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://n0kih06sm1mc" path="res://Utils/Scroller/scroller.gd" id="2_yfqdx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rxhxr"]
-font_size = 35
+font_size = 36
 outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+outline_color = Color(1, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yfqdx"]
 font_size = 20
 outline_size = 7
-outline_color = Color(0, 0, 0, 1)
+outline_color = Color(1, 0, 0, 1)
 
 [node name="ListElements" type="Node2D" unique_id=1797927700]
 script = ExtResource("1_1tl1k")
@@ -73,7 +73,7 @@ Elts
 offset_left = 13.0
 offset_top = 3.0
 offset_right = 404.0
-offset_bottom = 153.0
+offset_bottom = 60.0
 text = "T"
 label_settings = SubResource("LabelSettings_rxhxr")
 clip_text = true
