@@ -8,6 +8,11 @@ font_size = 35
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_yfqdx"]
+font_size = 20
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
 [node name="ListElements" type="Node2D" unique_id=1797927700]
 script = ExtResource("1_1tl1k")
 
@@ -50,6 +55,20 @@ theme_override_font_sizes/font_size = 40
 text = "X
 "
 
+[node name="Back2" type="Button" parent="UI" unique_id=1556914662]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -306.0
+offset_top = 1.0
+offset_right = -237.0
+offset_bottom = 62.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 18
+text = "Copy
+Elts
+"
+
 [node name="Label" type="Label" parent="UI" unique_id=710556393]
 offset_left = 13.0
 offset_top = 3.0
@@ -59,11 +78,19 @@ text = "T"
 label_settings = SubResource("LabelSettings_rxhxr")
 clip_text = true
 
+[node name="Count" type="Label" parent="UI" unique_id=1621019717]
+offset_left = 15.0
+offset_top = 54.0
+offset_right = 407.0
+offset_bottom = 82.0
+text = "NOMBRE :"
+label_settings = SubResource("LabelSettings_yfqdx")
+
 [node name="Find" type="LineEdit" parent="UI" unique_id=1901507698]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -307.0
+offset_left = -228.0
 offset_right = -82.5
 offset_bottom = 63.0
 grow_horizontal = 0
@@ -74,4 +101,5 @@ clear_button_enabled = true
 
 [connection signal="pressed" from="UI/AddElt" to="." method="_on_add_elt_pressed"]
 [connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="UI/Back2" to="." method="_on_back_2_pressed"]
 [connection signal="text_changed" from="UI/Find" to="." method="_on_line_edit_text_changed"]

@@ -103,6 +103,8 @@ func UpdateDisplay(text: String = ""):
 		
 		offsetY += 100
 	$UI/Scroller.minPosY = -offsetY + 100.0
+	$UI/Count.text = "NOMBRE : " + str(Data.listes.size())
+	
 var addlist = preload("res://Scenes/Listes/addlist.tscn")
 
 func _ready() -> void:

@@ -81,9 +81,9 @@ func UpdateDisplay(text :String = ""):
 		create_remove_button.call(offsetX, offsetY)
 		create_edit_button.call(offsetX, offsetY)
 		create_count_label.call(offsetX, offsetY)
-		
 		offsetY += 80
 	$UI/Scroller.minPosY = -offsetY + 100.0
+	$UI/Count.text = "NOMBRE : " + str(Data.listes[Data.current_list_name].elements.size())
 	
 func _ready() -> void:
 	$UI/Label.text = Data.current_list_name
@@ -101,3 +101,12 @@ func _on_add_elt_pressed() -> void:
 func _on_line_edit_text_changed(new_text: String) -> void:
 	UpdateDisplay(new_text)
 	$UI/Scroller.position.y = 0.0
+
+#Copy to clipboard all the content of the list (without the quantities)
+func _on_back_2_pressed() -> void:
+	var output : String = ""
+	
+	for elt_name in Data.listes[Data.current_list_name].elements.keys():
+		output += elt_name + "\n"
+	
+	DisplayServer.clipboard_set(output)

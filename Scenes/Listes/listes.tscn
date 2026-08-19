@@ -8,6 +8,11 @@ font_size = 42
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_bpm7b"]
+font_size = 20
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Listes" type="Node2D" unique_id=995650220]
 script = ExtResource("1_v87jk")
 
@@ -57,6 +62,14 @@ offset_right = 405.0
 offset_bottom = 61.0
 text = "LISTES"
 label_settings = SubResource("LabelSettings_v87jk")
+
+[node name="Count" type="Label" parent="UI" unique_id=1161522517]
+offset_left = 15.0
+offset_top = 54.0
+offset_right = 407.0
+offset_bottom = 82.0
+text = "NOMBRE :"
+label_settings = SubResource("LabelSettings_bpm7b")
 
 [node name="Find" type="LineEdit" parent="UI" unique_id=886990296]
 anchors_preset = 1
